@@ -10,7 +10,14 @@ import { DbzModule } from './dbz/dbz.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CommonModule, FormsModule, CounterModule, HeoresModule, DbzModule],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    CounterModule,
+    HeoresModule,
+    DbzModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
