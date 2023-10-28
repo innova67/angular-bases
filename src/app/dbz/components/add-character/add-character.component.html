@@ -1,5 +1,9 @@
 <h4>Agregar personaje</h4>
 <form class="row">
+  <!-- convertimos este input normal en un inputt de angular gracias al ngModel
+  También esto es un two way data binding porque asociamos un evento (ngModel) dentro de un atributo [] al mismo tiempo
+  ahora cuando el dato cambie va a cambiar tambien el valor en el .ts en tiempo real
+  -->
   <input
     type="text"
     [(ngModel)]="character.name"
