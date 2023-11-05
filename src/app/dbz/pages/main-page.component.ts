@@ -20,4 +20,11 @@ export class MainPageComponent {
       power: 7500,
     },
   ];
+
+  public anexarPersonaje(character: Character):void {
+    console.log('MainPage');
+    console.log(character);
+
+  }
+
 }

@@ -1,5 +1,7 @@
 <h4>Agregar personaje</h4>
-<form class="row">
+
+<!-- lo correcto es tener el evento de envio de formulario en el mismo formulario y no en el boton interno -->
+<form class="row" (ngSubmit)="emitCharacter()">
   <!-- convertimos este input normal en un inputt de angular gracias al ngModel
   También esto es un two way data binding porque asociamos un evento (ngModel) dentro de un atributo [] al mismo tiempo
   ahora cuando el dato cambie va a cambiar tambien el valor en el .ts en tiempo real
@@ -20,7 +22,7 @@
     placeholder="Poder"
   />
 
-  <button type="submit" class="btn btn-primary" (click)="emitCharacter()">Agregar</button>
+  <button type="submit" class="btn btn-primary">Agregar</button>
 
   <pre>{{character | json}} </pre>
 </form>
