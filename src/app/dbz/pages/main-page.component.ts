@@ -6,7 +6,7 @@ import { Character } from '../interfaces/character.interface';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
-  public characters: Character[] = [
+  public charactersArray: Character[] = [
     {
       name: 'Krillin',
       power: 1000,
@@ -18,12 +18,11 @@ export class MainPageComponent {
     {
       name: 'Vegeta',
       power: 7500,
-    },
+    }
   ];
 
   public onNewCharacter(character: Character): void {
     //esta seccion no anexa datos sino que genera un link entre el modulo que agrega personajes y la lista :c
-    this.characters.push(character);
-    console.log(character);
+    this.charactersArray.push(character);
   }
 }
