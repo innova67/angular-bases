@@ -7,6 +7,7 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./add-character.component.css'],
 })
 export class AddCharacterComponent {
+
   @Output()
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
@@ -17,13 +18,15 @@ export class AddCharacterComponent {
 
   emitCharacter(): void {
 
-    console.log(this.character);
-    // filtrar nombres vacios y mattar la funcion en caso de haber
+    console.log(this.character.name);
+    console.log(this.character.power);
+    // filtrar nombres vacios y mattar la funcion
     if (this.character.name.length === 0) return;
 
-    // emitir datos hacia otra parte de angular
+    // emitir datos hacia otra parte de angular que este escuchando
     this.onNewCharacter.emit(this.character);
 
-    (this.character.name = ''), (this.character.power = 0);
+    this.character.name = '';
+    this.character.power = 0;
   }
 }

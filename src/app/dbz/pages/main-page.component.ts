@@ -21,10 +21,9 @@ export class MainPageComponent {
     },
   ];
 
-  public anexarPersonaje(character: Character):void {
-    console.log('MainPage');
+  public onNewCharacter(character: Character): void {
+    //esta seccion no anexa datos sino que genera un link entre el modulo que agrega personajes y la lista :c
+    this.characters.push(character);
     console.log(character);
-
   }
-
 }
