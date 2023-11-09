@@ -3,12 +3,12 @@
 
 <div class="row">
   <div class="col">
-    <!-- enviando datos al componente -->
-    <dbz-list [personaje]="charactersArray"></dbz-list>
+    <!-- enviando datos del main page ts al componente list ts -->
+    <dbz-list [personaje]="dbzService.charactersArray" (emisorIndice)="dbzService.borrarCharacter($event)"></dbz-list>
   </div>
   <div class="col">
     <!-- () son eventos [] son atributos -->
-    <!-- recibir datos gracias al event emiter de emmitCharacter-->
-    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    <!-- escuchar si hay cambios en otros ts gracias a la emision de datos desde add character-->
+    <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
   </div>
 </div>
