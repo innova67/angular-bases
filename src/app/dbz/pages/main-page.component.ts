@@ -7,5 +7,21 @@ import { Character } from '../interfaces/character.interface';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
-  constructor(public dbzService: DbzService) {}
+  constructor(private dbzService: DbzService) {}
+
+  get characters(): Character[]{
+    //*hacerlo de esta manera vincula los datos a su ubicacion original, solo le estoy pasando una referencia
+    // return this.dbzService.charactersArray;
+
+    //*hacerlo asi crea un nuevo array independiente de los datos orignales al momento de ejecutarse
+    return [...this.dbzService.charactersArray];
+  }
+
+  onDeleteCharacter( id:string):void {
+    this.dbzService.borrarCharacterPorId(id);
+  }
+
+  onNewCharacter(personaje: Character) {
+    this.dbzService.addCharacter(personaje);
+  }
 }

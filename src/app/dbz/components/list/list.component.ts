@@ -8,8 +8,8 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class ListComponent {
 
-  @Output('emisorIndice')
-  public whenDeleteCharacter: EventEmitter<number> = new EventEmitter();
+  @Output('onDeleteHero')
+  public whenDeleteCharacter: EventEmitter<string> = new EventEmitter();
 
   //*Estoy recibiendo datos del main page
   @Input('personaje')
@@ -20,7 +20,10 @@ export class ListComponent {
     },
   ];
 
-  onDeleteCharacter(index:number):void {
-    this.whenDeleteCharacter.emit(index)
+  onDeleteCharacter(id?:string):void {
+    //si no hay id nunca se ejecuta
+    if (!id) return;
+
+    this.whenDeleteCharacter.emit(id);
   }
 }
